@@ -1,0 +1,914 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 10px;
+  font-family: 'Signika', sans-serif;
+  background-color: lightslategrey;
+
+}
+
+ul, ol{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+  color: black;
+}
+h1{
+	font-size: 40px;
+}
+
+h2{
+	font-size: 25px;
+}
+
+p{
+	font-size: 15px;
+}
+
+nav {
+  background-color: orange;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100vh;
+  /*padding: 2em;*/
+  text-align: right;
+  overflow: hidden;
+  z-index: 15;
+  transition: 350ms;
+}
+nav img{
+	width: 70%;
+}
+nav ul{
+  padding: 2em;
+}
+nav li{
+  font-size: 14px;
+  border-bottom: solid 3px white;
+  text-align: center;
+}
+nav a{
+  padding: 2em 3em;
+  color:white;
+  display: inline-block;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+#abre-nav:checked ~ nav{
+	width: 100vw;
+}
+
+/* ocultamos el checkbox */
+#abre-nav{
+	display: none;
+}
+
+.cierra{
+	color: rgb(20, 6, 3);
+	font-size: 3em;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+.toggle-nav{
+	display: block;
+	font-size: 2em;
+	color: #ffffff;
+	margin: auto;
+	width: 50px;
+	background-color: #222222;
+	padding: 15px 0;
+	text-align: center;
+  position: absolute;
+  transform: translate(-50%,0);
+  top: 20px;
+  left: 50%;
+  position: absolute;
+  z-index: 10;
+}
+
+.main-header {
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  text-align: center;
+  background-attachment: fixed;
+  height: 400px;
+  padding: 12em 0;
+  position: relative;
+}
+
+.fake-bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  top: 0;
+  z-index: 5;
+}
+
+.main-header h1 {
+  color: white;
+  font-size: 3em;
+  font-style: italic;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+.main-header h3 {
+  color:white;
+  font-size: 1.5em;
+  position: relative;
+  z-index: 10;
+  padding: 25px;
+}
+.boton-contacto{
+  background-color: orange;
+  color: white;
+  padding: 1em;
+  font-size: 1.5em;
+  position: relative;
+  z-index: 10;
+}
+.login input{
+  font-size: 2em;
+}
+
+.container{
+  background-color: #b7cfdc;
+  background-attachment: fixed;
+  padding: 4em;
+}
+.container h2{
+  color: rgb(17, 14, 40);
+  font-size: 2em;
+  text-align: center;
+}
+
+.servicio {
+  width: 90%;
+  margin: 1em;
+  text-align: center;
+  background-color: transparent;
+}
+.servicio p{
+  font-size: 1.5em;
+}
+
+.servicio h3{
+  font-size: 2em;
+  color:rgb(17, 14, 40);
+}
+.servicio img{
+  width: 100%;
+}
+
+footer{
+  background-color: rgb(57, 57, 57);
+  color: transparent;
+  padding: 2em 2em;
+  text-align: center;
+}
+footer a{
+  color:grey;
+  font-size: 1.5em;
+}
+footer p{
+  color:grey;
+  font-size: 1.5;
+}
+
+/*A partir de aca faq.php y contacto.php*/
+
+.titulo, .faq{
+  text-align: center;
+  margin: auto;
+}
+
+.titulo{
+  padding-top: 40px;
+  background-color:#85C1E9;
+  width: 100%;
+  height: 150px;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  border-bottom: solid white 5px;
+}
+
+.respuesta0, .respuesta1, .respuesta2, .respuesta3, .respuesta4, .respuesta5, .respuesta6, .respuesta7{
+  background-color: white;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  transition: 350ms;
+  border-radius: 20px;
+}
+
+
+/* abre la respuesta solo cuando está seleccionado su checkbox */
+#abre-respuesta0:checked ~ .respuesta0{
+  height: 100%;
+  padding: 20px;
+}
+#abre-respuesta1:checked ~ .respuesta1{
+  height: 100%;
+  padding: 20px;
+}
+#abre-respuesta2:checked ~ .respuesta2{
+  height: 100%;
+  padding: 20px;
+}
+#abre-respuesta3:checked ~ .respuesta3{
+  height: 100%;
+  padding: 20px;
+}
+#abre-respuesta4:checked ~ .respuesta4{
+  height: 100%;
+  padding: 20px;
+}
+#abre-respuesta5:checked ~ .respuesta5{
+  height: 100%;
+  padding: 20px;
+}
+#abre-respuesta6:checked ~ .respuesta6{
+  height: 100%;
+  padding: 20px;
+}
+#abre-respuesta7:checked ~ .respuesta7{
+  height: 100%;
+  padding: 20px;
+}
+
+
+.imagen0:hover, .imagen1:hover, .imagen2:hover, .imagen3:hover, .imagen4:hover, .imagen5:hover, .imagen6:hover, .imagen7:hover{
+-webkit-transform: rotateY(180deg);
+-webkit-transform-style: preserve-3d;
+transform: rotateY(180deg);
+transform-style: preserve-3d;
+}
+
+.img0, .img1, .img2, .img3, .img4, .img5, .img6, .img7{
+  margin: auto;
+text-align: center;
+}
+
+.container{
+  overflow: hidden;
+}
+
+.preg0, .preg1, .preg2, .preg3, .preg4, .preg5, .preg6, .preg7{
+  float:left;
+  margin: 50px;
+}
+
+.pregunta0, .pregunta1, .pregunta2, .pregunta3, .pregunta4, .pregunta5, .pregunta6, .pregunta7{
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+
+}
+
+.a-pregunta:hover {
+  color: orange;
+}
+
+.contactanos{
+  background-color: #85C1E9;
+  /*font-size: 10px;*/
+  margin: 10% 40% 10% 10%;
+  border: solid white 2px;
+  text-align: center;
+}
+
+.contactanos-p{
+  font-size: 1em;
+  color: black;
+}
+
+.contactanos:hover{
+  background-color: orange;
+}
+
+
+/* ocultamos el checkbox */
+#abre-respuesta0, #abre-respuesta1, #abre-respuesta2, #abre-respuesta3, #abre-respuesta4, #abre-respuesta5, #abre-respuesta6, #abre-respuesta7{
+  display: none;
+}
+
+
+/*ESTILO CONTACTO INDEX*/
+
+.contenedor-contacto{
+	background-color: white;
+	margin: 10% auto;
+	width: 70%;
+}
+
+#input1, #input2, #input3, #input4{
+	width: 80%;
+	font-size: 2em;
+	border: solid 1px black;
+	text-align: center;
+}
+#input5{
+	border: solid 3px orange;
+	font-size: 2em;
+	background-color: white;
+}
+
+#input1:hover, #input2:hover, #input3:hover, #input4:hover{
+	border: solid 1px orange;
+}
+#input5:hover{
+	color: orange;
+}
+
+
+
+.nombre-contacto, .mail-contacto, .asunto-contacto, .mensaje-contacto{
+	margin-bottom: 10%;
+	text-align: center;
+}
+.nombre-contacto{
+	border-top: double 10px orange;
+	padding-top: 10%;
+}
+
+.contenedor-contacto{
+	padding: 5%;
+	text-align: center;
+}
+
+.enviar-contacto{
+	width: 100%;
+	text-align: center;
+}
+
+.super-contenedor0, .super-contenedor1, .super-contenedor2, .super-contenedor3, .super-contenedor4, .super-contenedor5, .super-contenedor6, .super-contenedor7{
+  width:80%;
+  margin: 2% auto;
+  overflow: hidden;
+}
+/*Fin de faq.php y contacto.php*/
+
+
+/*A partir de aca el registro*/
+.errores{
+	font-size: 1em;
+	margin-bottom: 5%;
+	text-align: left;
+	color: red;
+}
+
+.container-formulario{
+	width: 90%;
+	margin: 15% auto;
+	padding: 5% 15%;
+	text-align: center;
+	font-size: 2em;
+	background-color: white;
+}
+
+
+.registro-cont-nombre, .registro-cont-correo, .registro-cont-edad, .registro-cont-pass, .registro-cont-repass, .registro-cont-avatar{
+	margin-bottom: 10%;
+	text-align: center;
+/*	overflow: hidden;*/
+}
+.registro-cont-nombre{
+	padding-top: 10%;
+	border-top: double 10px orange;
+}
+
+.label-nombre-r, .label-correo-r, .label-edad-r, .label-pass-r, .label-repass-r, .label-avatar-r{
+/*	float: left;*/
+}
+
+.in-nombre-r, .in-correo-r, .in-edad-r, .in-pass-r, .in-repass-r, .in-avatar-r{
+/*	clear: both;*/
+	width: 100%;
+	border: solid 1px black;
+}
+
+.in-nombre-r:hover, .in-correo-r:hover, .in-edad-r:hover, .in-pass-r:hover, .in-repass-r:hover{
+	border: solid 1px orange;
+}
+
+#input-file{
+	font-size: 0.7em;
+}
+#input-file:hover{
+	color: orange;
+}
+
+.enviar-r{
+	border: solid 3px orange;
+	background-color: white;
+}
+
+/*fin de registro*/
+
+
+
+/*A partir de aca el login*/
+
+.container-login{
+	background-color: white;
+	margin: 20% 10%;
+	text-align: center;
+	padding: 10%;
+}
+
+.login-titulo{
+	border-bottom: double 10px orange;
+	margin-bottom: 10%;
+	font-size: 4em;
+}
+
+.input-login1, .input-login2{
+	border: solid 2px black;
+	text-align: center;
+	margin-bottom: 5%;
+	font-size: 2em;
+}
+
+.input-login1:hover, .input-login2:hover{
+	border: solid 2px orange;
+}
+
+.enviar-login{
+	border: solid 2px orange;
+	background-color: white;
+	font-size: 2.5em;
+	margin-top: 5%;
+}
+.enviar-login:hover{
+	color: white;
+  background-color: orange;
+}
+.recordar {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+
+/*fin de login*/
+
+/*perfil-usuarios*/
+.container_perfil{
+  text-align: center;
+  margin-top: 150px;
+}
+
+/* empieza mi perfil*/
+
+
+.container_perfil{
+/*	border: solid 2px orange;*/
+	background-color: white;
+	margin: 30% 5%;
+	padding: 10%;
+}
+
+.info-perfil{
+/*	background-color: white;*/
+	margin: 10% 0;
+	padding: 5%;
+	font-size: 1.5em;
+	border-top: double 10px orange;
+	border-bottom: double 10px orange;
+	color: black;
+}
+
+.titulo-perfil{
+	text-transform: uppercase;
+}
+.nombre-perfil{
+	text-transform: uppercase;
+	color: orange;
+}
+
+.titulo-info{
+	text-decoration: underline;
+	text-transform: uppercase;
+}
+.img-perfil{
+	border-radius: 50%;
+	width: 60%;
+	border: solid 2px orange;
+	margin-bottom: 5%;
+	margin-top: 5%
+}
+
+.boton-salir-login{
+	background-color: transparent;
+	font-size:2em;
+	margin: 10%;
+	padding: 2%;
+/*	border: solid 2px orange;*/
+	text-transform: uppercase;
+}
+.boton-salir-login:hover{
+	color: #85C1E9;
+}
+.nombre-email-perfil{
+	text-align: left;
+	margin-bottom: 5%;
+}
+
+.nombre-email-perfil ul{
+	list-style: circle;
+}
+
+
+
+/*register-ok*/
+
+.r-ok-contenedor{
+	padding: 5%;
+	margin: 30% 5%;
+	border: solid 4px orange;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+}
+
+.ion-happy-outline{
+	font-size: 7em;
+}
+
+
+
+/*A partir de aca Botones.png*/
+.super-contenedor-botones{
+	overflow: hidden;
+	text-align: center;
+	margin: 100px auto;
+}
+.contenedor-botones{
+	border-right: double 15px orange;
+	border-left: double 15px orange;
+	overflow: hidden;
+	width: 500px;
+	text-align: center;
+	margin: auto;
+	padding: 2%;
+
+}
+
+.imagen-botones{
+	width: 700px;
+	clear: both;
+	margin-bottom: 50px;
+}
+
+.boton-db, .boton-tabla, .boton-migrar{
+	font-size: 30px;
+	background-color: white;
+	color: black;
+	width: 400px;
+	margin: 20px auto;
+	border: 2px solid black;
+}
+.boton-db:hover, .boton-tabla:hover, .boton-migrar:hover{
+	background-color: orange;
+}
+.salir-botones{
+	clear: both;
+	font-size: 25px;
+
+}
+.salir-botones:hover{
+	color:orange;
+}
+
+
+.body-botones{
+	text-align: center;
+	padding-top: 80px;
+}
+
+.body-botones p{
+	color: white;
+	font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*A partir de aca es para tablet*/
+@media (min-width: 650px) {
+  .main-header {
+    padding: 0;
+  }
+  .container{
+  margin: auto;
+  }
+
+  .container h2{
+    font-size: 3em;
+    color: #2b3287;
+    text-transform: uppercase;
+  }
+	nav{
+    display: block;
+		width: 100%;
+		height: auto;
+		position: relative;
+		background-color: transparent;
+  }
+  nav ul{
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  }
+  nav li{
+		float: left;
+		width: 18%;
+    border-bottom: none;
+		margin: 0 0.83%;
+	}
+
+	nav a{
+    color: white;
+    padding: 1.5em;
+    font-size: 1.2em;
+    border-bottom: none;
+	}
+  nav a:hover{
+    color: black;
+    background-color: white
+  }
+  .main-header h1{
+    margin: 150px 0 0 0;
+    width: 100%;
+  }
+  .cierra, .toggle-nav{
+    display: none;
+  }
+
+  .servicio {
+    display: inline-block;
+    width: 46%;
+  }
+
+  .login {
+    margin: 50px 10px;
+  }
+
+
+.login-titulo{
+	font-size: 5em;
+}
+
+.input-login1, .input-login2{
+	margin-bottom: 10%;
+	font-size: 3em;
+}
+
+.enviar-login{
+	font-size: 3.5em;
+	margin-top: 0;
+}
+
+/*boton de contactanos-faq*/
+.contactanos{
+  margin: 5% 60% 5% 5%;
+}
+
+
+/*miperfil*/
+
+.container_perfil{
+	margin: 12% 10%;
+	padding: 5%;
+}
+
+.info-perfil{
+	font-size: 2em;
+}
+
+.boton-salir-login{
+	font-size:2.5em;
+}
+
+
+
+}
+
+/*A partir de aca laptop*/
+@media (min-width: 1200px){
+  .container{
+    max-width: 1200px;
+  }
+  nav a{
+    padding: 3em;
+  }
+
+  .servicio{
+    width: 31%;
+  }
+  .main-header{
+    height: 450px;
+  }
+
+  .titulo{
+    margin-top: 140px;
+  }
+/*  contacto-index*/
+  #input1, #input2, #input3, #input4{
+	font-size: 2.5em;
+	}
+  #input5{
+	border: solid 5px orange;
+	font-size: 2.5em;
+    }
+  .contenedor-contacto{
+	width: 50%;
+    }
+  .titulo-contacto{
+	font-size: 2.5em;
+	}
+/*	registro*/
+	.container-formulario{
+	width: 70%;
+	padding: 5%;
+	font-size: 2em;
+	margin-top: 15%;
+/*	background-color: red;*/
+	}
+	.primeros-tres{
+		float: left;
+/*		background-color: aqua;*/
+		width: 45%;
+	}
+	.segundos-tres{
+		float: right;
+/*		background-color: green;*/
+		width: 45%;
+	}
+	.registro-cont-nombre{
+	padding-top:0;
+	border-top:none;
+}
+	.enviar-r{
+		display: block;
+		margin: auto;
+		clear: both;
+	}
+
+	.registro-r{
+		border-bottom: double 10px orange;
+		border-top: double 10px orange;
+		margin-bottom: 10%;
+	}
+	.in-nombre-r, .in-correo-r, .in-edad-r, .in-pass-r, .in-repass-r, .in-avatar-r{
+	   margin-top: 3%;
+	}
+
+.container-login{
+	margin: 15% 25% 10% 25%;
+	padding: 5%;
+}
+
+
+.input-login1, .input-login2{
+	font-size: 2em;
+}
+.input-login1, .input-login2{
+	margin-bottom: 3%;
+}
+
+.enviar-login{
+	font-size: 3em;
+}
+
+/*boton de contactanos-faq*/
+.contactanos{
+  margin: 5% 70% 5% 3%;
+}
+
+/*miperfil*/
+.container_perfil{
+	margin: 12% 10%;
+	padding: 5%;
+}
+
+.info-perfil{
+	font-size: 2em;
+}
+
+.boton-salir-login{
+	font-size:3em;
+}
+
+/*miperfil*/
+
+	.nombre-email-perfil{
+/*		background-color: bisque;*/
+		float: right;
+		margin-top: 10%;
+	}
+
+
+	.info-perfil{
+		overflow: hidden;
+	}
+
+	.img-perfil{
+/*		float: right;*/
+		width: 40%;
+		margin: 0;
+	}
+
+	.nombre-perfil{
+		font-size: 5em;
+	}
+
+	.titulo-perfil{
+		font-size: 3em;
+	}
+
+
+/*	registrarte-ok*/
+
+
+	.r-ok-contenedor{
+	padding: 5%;
+	margin: 25% 10%;
+	border: solid 6px orange;
+}
+
+.ion-happy-outline{
+	font-size: 15em;
+}
+
+/*A partir de aca Botones.png*/
+.super-contenedor-botones{
+	padding: 65px;
+	overflow: hidden;
+	margin: 100px auto;
+}
+.contenedor-botones{
+	float: right;
+	padding-right: 7%;
+	padding-left: 7%;
+	margin-top: 35px;
+}
+
+.imagen-botones{
+	width: 550px;
+	float: left;
+}
+
+.boton-db, .boton-tabla, .boton-migrar{
+	font-size: 25px;
+	background-color: white;
+	color: black;
+	width: 300px;
+	margin: 10px auto;
+	border: 2px solid black;
+}
+
+.boton-db:hover, .boton-tabla:hover, .boton-migrar:hover{
+	background-color: orange;
+}
+.salir-botones{
+	clear: both;
+	font-size: 15px;
+
+}
+.salir-botones:hover{
+	color:orange;
+}
+
+
+
+
+}
